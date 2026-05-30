@@ -1,0 +1,131 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-success-foreground: var(--success-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.18 0.04 265);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.04 265);
+  --primary: oklch(0.52 0.22 277);
+  --primary-hover: oklch(0.47 0.22 277);
+  --primary-foreground: oklch(1 0 0);
+  --primary-soft: oklch(0.96 0.025 277);
+  --secondary: oklch(0.97 0.01 260);
+  --secondary-foreground: oklch(0.18 0.04 265);
+  --muted: oklch(0.97 0.01 260);
+  --muted-foreground: oklch(0.55 0.025 260);
+  --accent: oklch(0.96 0.025 277);
+  --accent-foreground: oklch(0.52 0.22 277);
+  --success: oklch(0.62 0.17 145);
+  --success-soft: oklch(0.94 0.07 145);
+  --success-foreground: oklch(1 0 0);
+  --border: oklch(0.91 0.01 255);
+  --input: oklch(0.91 0.01 255);
+  --ring: oklch(0.52 0.22 277);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html, body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+  }
+  h1, h2, h3 {
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .yf-wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .yf-eyebrow {
+    font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--color-primary); font-weight: 700; display: inline-block;
+  }
+  .yf-secnum {
+    font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--color-primary); font-weight: 700; margin-bottom: 14px; display: block;
+  }
+  .yf-micro {
+    font-size: 12px; letter-spacing: 0.04em;
+    color: var(--color-muted-foreground); font-weight: 600;
+  }
+  .yf-tnum { font-feature-settings: 'tnum'; }
+  .yf-display {
+    font-size: clamp(38px, 6vw, 64px);
+    line-height: 1.03; letter-spacing: -0.03em; font-weight: 800;
+  }
+  .yf-h2 { font-size: clamp(28px, 3.6vw, 40px); }
+  .yf-card {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 26px;
+    box-shadow: 0 1px 3px oklch(0.18 0.04 265 / 0.04);
+  }
+  .yf-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    font-family: inherit; font-size: 15px; font-weight: 700;
+    padding: 13px 24px; border: 1px solid transparent; border-radius: 12px;
+    cursor: pointer; transition: all 0.18s;
+  }
+  .yf-btn-primary {
+    background: var(--color-primary); color: var(--color-primary-foreground);
+    box-shadow: 0 6px 16px oklch(0.52 0.22 277 / 0.22);
+  }
+  .yf-btn-primary:hover { background: var(--color-primary-hover); }
+  .yf-btn-primary:disabled { opacity: 0.5; cursor: default; box-shadow: none; }
+  .yf-btn-secondary {
+    background: var(--color-card); color: var(--color-foreground);
+    border-color: var(--color-border);
+  }
+  .yf-btn-secondary:hover { border-color: var(--color-muted-foreground); }
+  .yf-btn-done {
+    background: var(--color-success-soft); color: var(--color-success); cursor: default;
+  }
+  .yf-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--color-card); border: 1px solid var(--color-border);
+    border-radius: 999px; padding: 6px 14px;
+    font-size: 13px; font-weight: 600; color: var(--color-muted-foreground);
+  }
+  .yf-hero {
+    background: linear-gradient(180deg, var(--color-primary-soft) 0%, var(--color-background) 70%);
+  }
+}
