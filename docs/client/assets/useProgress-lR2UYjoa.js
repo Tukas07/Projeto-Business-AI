@@ -1,0 +1,1 @@
+import{r}from"./index-RN235Y0p.js";const s="yf:completed";function m(){const[c,o]=r.useState(new Set);r.useEffect(()=>{try{const t=localStorage.getItem(s);t&&o(new Set(JSON.parse(t)))}catch{}},[]);const a=r.useCallback(t=>{o(n=>{const e=new Set(n);e.add(t);try{localStorage.setItem(s,JSON.stringify([...e]))}catch{}return e})},[]);return{completed:c,markDone:a}}export{m as u};

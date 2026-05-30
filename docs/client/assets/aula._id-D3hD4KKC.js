@@ -1,0 +1,1 @@
+import{j as n,L as o}from"./index-RN235Y0p.js";const s=()=>n.jsxs("div",{className:"py-20 yf-wrap text-center",children:[n.jsx("h1",{className:"text-2xl font-bold",children:"Aula não encontrada"}),n.jsx(o,{to:"/curso",className:"yf-btn yf-btn-primary mt-6 inline-flex",children:"Voltar ao curso"})]});export{s as notFoundComponent};
